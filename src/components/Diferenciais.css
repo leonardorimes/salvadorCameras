@@ -1,0 +1,136 @@
+.diferenciais {
+  position: relative;
+  overflow: hidden;
+}
+
+.diferenciais__bg-decor {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.diferenciais__blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+}
+
+.diferenciais__blob--1 {
+  width: 500px;
+  height: 500px;
+  background: rgba(13, 87, 52, 0.2);
+  top: -150px;
+  right: -150px;
+}
+
+.diferenciais__blob--2 {
+  width: 400px;
+  height: 400px;
+  background: rgba(2, 169, 89, 0.1);
+  bottom: -100px;
+  left: -100px;
+}
+
+.diferenciais .container {
+  position: relative;
+  z-index: 1;
+}
+
+.diferenciais__header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.diferenciais__subtitle {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.diferenciais__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.diferenciais__card {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.diferenciais__card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradient-main);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+  border-radius: 0 0 3px 3px;
+}
+
+.diferenciais__card:hover::before {
+  transform: scaleX(1);
+}
+
+.diferenciais__card-icon {
+  font-size: 2.2rem;
+  margin-bottom: 4px;
+}
+
+.diferenciais__card-highlight {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--green-bright);
+  background: rgba(2, 169, 89, 0.1);
+  border: 1px solid rgba(2, 169, 89, 0.25);
+  padding: 4px 10px;
+  border-radius: 100px;
+  width: fit-content;
+}
+
+.diferenciais__card-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 4px 0;
+}
+
+.diferenciais__card-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  flex: 1;
+}
+
+.diferenciais__card-line {
+  height: 1px;
+  background: var(--dark-border);
+  margin-top: 8px;
+}
+
+.diferenciais__card:hover .diferenciais__card-line {
+  background: rgba(2,169,89,0.3);
+  transition: background 0.3s;
+}
+
+@media (max-width: 900px) {
+  .diferenciais__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 580px) {
+  .diferenciais__grid {
+    grid-template-columns: 1fr;
+  }
+}
